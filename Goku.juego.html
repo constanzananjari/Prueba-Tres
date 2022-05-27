@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html>
 <style>
     #world {
@@ -111,6 +111,7 @@
         top: 5px;
         background-repeat: no-repeat;
     }
+
 </style>
 
 
@@ -132,7 +133,8 @@
 
 <!--Movimiento de goku  -->
 
-        <script>
+        <script >
+
             var goku = document.getElementById("goku");
             var kemehameha = document.getElementById("kemehameha");
             var cell = document.getElementById("cell");
@@ -159,7 +161,7 @@
                     moverAbajo();
                 }
 
-                if (e.keyCode == "68") {
+                if (e.keyCode == "32") {
                     atacar();
                 }
                 if (e.keyCode == "65") {
@@ -197,9 +199,9 @@
 
             function moverDerechacell() {
                 mLeft += velocidad;
-                cell.style.marginLef = mLeft + "px";
+                goku.style.marginLef = mLeft + "px";
             }
-
+ 
 //Movimiento de Cell
 
             var cell = document.getElementById("cell");
@@ -209,27 +211,27 @@
             var mTop = 0;
             var mLeft = 0;
 
-            document.addEventListener("keydown", function (e) {
+            document.addEventListener("keydown", function (x) {
 
-                if (e.keyCode == "d") {
+                if (x.keyCode == "65") {
                     moverDerecha();
                 }
 
-                if (e.keyCode == "a") {
+                if (x.keyCode == "68") {
                     moverIzquierda();
                 }
 
-                if (e.keyCode == "w") {
+                if (x.keyCode == "87") {
                     moverArriba();
                 }
 
-                if (e.keyCode == "s") {
+                if (x.keyCode == "83") {
                     moverAbajo();
                 }
-                if (e.keyCode == "d") {
+                if (x.keyCode == "70") {
                     atacar();
                 }
-                if (e.keyCode == "a") {
+                if (x.keyCode == "a") {
 
                     moverDerechacell();
                 }
