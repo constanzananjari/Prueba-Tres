@@ -1,48 +1,46 @@
 <script>
-
     var cell = document.getElementById("cell");
     var velocidad = 50;
     var mTop = 0;
     var mLeft = 0;
 
-    document.addEventListener("keydown", function(e){
-        
-        if(e.keyCode == "39"){
+    document.addEventListener("keydown", function (e) {
+
+        if (e.keyCode == "39") {
             moverDerecha();
         }
 
-        if(e.keyCode == "37"){
+        if (e.keyCode == "37") {
             moverIzquierda();
         }
 
-        if(e.keyCode == "38"){
+        if (e.keyCode == "38") {
             moverArriba();
         }
 
-        if(e.keyCode == "40"){
+        if (e.keyCode == "40") {
             moverAbajo();
         }
 
     })
 
-    function moverDerecha(){
+    function moverDerecha() {
         mLeft += velocidad;
         cell.style.marginLeft = mLeft + "px";
     }
 
-    function moverIzquierda(){
+    function moverIzquierda() {
         mLeft -= velocidad;
         cell.style.marginLeft = mLeft + "px";
     }
 
-    function moverArriba(){
+    function moverArriba() {
         mTop -= velocidad;
         cell.style.marginTop = mTop + "px";
     }
 
-    function moverAbajo(){
+    function moverAbajo() {
         mTop += velocidad;
         cell.style.marginTop = mTop + "px";
     }
-
 </script>
