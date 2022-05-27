@@ -1,0 +1,8 @@
+
+En este archivo html, trabaje con html, css y javascript para armar un juego donde se tiene que arrojar un imagen de esfera.
+los controles del juego son las teclas arriba,abajo, derecha, izquierda para mover al personaje de goku, para mover el personaje de mini cell, se deben oprimir las teclas A S W D.
+con html declaramos los div y con el estilo insertamos y manipulamos la imagen.
+con javascript manipulamos el movimiento de los personajes. 
+se programo el movimiento a traves del teclado.
+
+Constanza Nanjari Colillanca
