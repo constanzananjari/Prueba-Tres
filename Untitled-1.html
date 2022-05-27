@@ -1,0 +1,47 @@
+<script>
+
+    var goku = document.getElementById("goku");
+    var velocidad = 50;
+    var mTop = 0;
+    var mLeft = 0;
+
+    document.addEventListener("keydown", function(e){
+        if(e.keyCode == "39"){
+            moverDerecha();
+        }
+
+        if(e.keyCode == "37"){
+            moverIzquierda();
+        }
+
+        if(e.keyCode == "38"){
+            moverArriba();
+        }
+
+        if(e.keyCode == "40"){
+            moverAbajo();
+        }
+
+    })
+
+    function moverDerecha(){
+        mLeft += velocidad;
+        goku.style.marginLeft = mLeft + "px";
+    }
+
+    function moverIzquierda(){
+        mLeft -= velocidad;
+        goku.style.marginLeft = mLeft + "px";
+    }
+
+    function moverArriba(){
+        mTop -= velocidad;
+        goku.style.marginTop = mTop + "px";
+    }
+
+    function moverAbajo(){
+        mTop += velocidad;
+        goku.style.marginTop = mTop + "px";
+    }
+
+</script>

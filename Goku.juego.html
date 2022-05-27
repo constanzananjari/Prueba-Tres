@@ -1,5 +1,5 @@
-<html>
 
+<html>
 <style>
     #world {
         background-image: url('img/namek.jpg');
@@ -7,7 +7,7 @@
         height: 9000px;
         background-repeat: no-repeat;
         background-size: 100%;
-            }
+    }
 
     #goku {
         background-image: rgb(248.116, 63);
@@ -20,7 +20,7 @@
         left: 40px;
         top: 250px;
         background-repeat: no-repeat;
-            }
+    }
 
     #cuadroDevidaGoku {
         background-image: rgb(145, 122, 49);
@@ -33,9 +33,9 @@
         left: 9px;
         top: 8px;
         background-repeat: no-repeat;
-            }
+    }
 
-    #barraVidaGoku{
+    #barraVidaGoku {
         background-image: rgb(54, 89, 243);
         height: 31px;
         width: 250px;
@@ -46,7 +46,20 @@
         left: 24px;
         top: 6px;
         background-repeat: no-repeat;
-            }
+    }
+
+    #kemehameha {
+        background-image: rgb(172, 216, 91);
+        height: 30px;
+        width: 30px;
+        display: inline-block;
+        background-image: url('img/kamehameha.gif');
+        background-size: contain;
+        position: absolute;
+        left: 300px;
+        top: 20px;
+        background-repeat: no-repeat;
+    }
 
     #cell {
         background-image: rgb(172, 216, 91);
@@ -59,9 +72,9 @@
         left: 800px;
         top: 250px;
         background-repeat: no-repeat;
-        }
+    }
 
-    #cuadroDevidacell{
+    #cuadroDevidacell {
         background-image: rgb(145, 122, 49);
         height: 60px;
         width: 250px;
@@ -72,7 +85,7 @@
         left: 658px;
         top: 8px;
         background-repeat: no-repeat;
-        }
+    }
 
     #barraVidaCell {
         background-image: rgb(185, 29, 8);
@@ -84,9 +97,20 @@
         position: absolute;
         left: 6px;
         top: 5px;
-        background-repeat:no-repeat;
-        }
-
+        background-repeat: no-repeat;
+    }
+    #disparominicell {
+        background-image: rgb(255, 238, 0);
+        height: 31px;
+        width: 250px;
+        display: inline-block;
+        background-image: url('img/disparominicell.png');
+        background-size: contain;
+        position: absolute;
+        left: 6px;
+        top: 5px;
+        background-repeat: no-repeat;
+    }
 </style>
 
 
@@ -97,20 +121,141 @@
         <div id="cuadroDeVidaGoku">
             <div id="barraVidaGoku"></div>
 
-        <div id="cell"></div>
+            <div id="cell"></div>
 
-        <div id="cuadroDeVidaCell">
-            <div id="barraVidaCell"></div>
+            <div id="cuadroDeVidaCell">
+                <div id="barraVidaCell"></div>
+            </div>
+            <div id="kemehameha"></div>
+            <div id="disparominicell"></div>
         </div>
-        
-    
-    </div>
+
+<!--Movimiento de goku  -->
+
+        <script>
+            var goku = document.getElementById("goku");
+            var kemehameha = document.getElementById("kemehameha");
+            var cell = document.getElementById("cell");
+            var velocidad = 50;
+            var velocidad1 = 100;
+            var mTop = 0;
+            var mLeft = 0;
+
+            document.addEventListener("keydown", function (e) {
+
+                if (e.keyCode == "39") {
+                    moverDerecha();
+                }
+
+                if (e.keyCode == "37") {
+                    moverIzquierda();
+                }
+
+                if (e.keyCode == "38") {
+                    moverArriba();
+                }
+
+                if (e.keyCode == "40") {
+                    moverAbajo();
+                }
+
+                if (e.keyCode == "68") {
+                    atacar();
+                }
+                if (e.keyCode == "65") {
+
+                    moverDerechacell();
+                }
 
 
-    <script type="text/javascrip">
-        
-        
-    </script>
+            })
+
+            function moverDerecha() {
+                mLeft += velocidad;
+                goku.style.marginLeft = mLeft + "px";
+            }
+
+            function moverIzquierda() {
+                mLeft -= velocidad;
+                goku.style.marginLeft = mLeft + "px";
+            }
+
+            function moverArriba() {
+                mTop -= velocidad;
+                goku.style.marginTop = mTop + "px";
+            }
+
+            function moverAbajo() {
+                mTop += velocidad;
+                goku.style.marginTop = mTop + "px";
+            }
+
+            function atacar() {
+                mTop -= velocidad1;
+                kemehameha.style.marginLeft = mLeft + "px";
+            }
+
+            function moverDerechacell() {
+                mLeft += velocidad;
+                cell.style.marginLef = mLeft + "px";
+            }
+
+//Movimiento de Cell
+
+            var cell = document.getElementById("cell");
+            var disparominicell = document.getElementById("disparominicell")
+            var Goku = document.getElementById("Goku");
+            var velocidad = 50;
+            var mTop = 0;
+            var mLeft = 0;
+
+            document.addEventListener("keydown", function (e) {
+
+                if (e.keyCode == "d") {
+                    moverDerecha();
+                }
+
+                if (e.keyCode == "a") {
+                    moverIzquierda();
+                }
+
+                if (e.keyCode == "w") {
+                    moverArriba();
+                }
+
+                if (e.keyCode == "s") {
+                    moverAbajo();
+                }
+                if (e.keyCode == "d") {
+                    atacar();
+                }
+                if (e.keyCode == "a") {
+
+                    moverDerechacell();
+                }
+            })
+
+            function moverDerecha() {
+                mLeft += velocidad;
+                cell.style.marginLeft = mLeft + "px";
+            }
+
+            function moverIzquierda() {
+                mLeft -= velocidad;
+                cell.style.marginLeft = mLeft + "px";
+            }
+
+            function moverArriba() {
+                mTop -= velocidad;
+                cell.style.marginTop = mTop + "px";
+            }
+
+            function moverAbajo() {
+                mTop += velocidad;
+                cell.style.marginTop = mTop + "px";
+            }
+
+        </script>
 
 </body>
 
